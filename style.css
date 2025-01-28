@@ -1,0 +1,1033 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+hr {
+  padding: 0;
+  margin: 0;
+}
+.display_flex {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  text-align: center;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+
+.filter {
+  filter: blur(4px);
+  -webkit-filter: blur(8px);
+}
+
+/* ----------------------------------------------------- Variable Initialization ----------------------------------------------------- */
+
+:root {
+  /* Font Variables */
+
+  --very-small-font: 10px;
+  --small-font: 13px;
+  --medium-font: 24px;
+  --large-font: 30px;
+  --extra-large-font: 40px;
+
+  /* Color Variables */
+
+  --white: #ffffff;
+  /* --red: ;
+  --blue: #1e90ff; */
+
+  /* Spacing Varibales */
+
+  --spacing-small: 8px;
+  --spacing-medium: 16px;
+  --spacing-large: 32px;
+
+  /* Icons Variables */
+
+  --very-small-icons : 13px;
+  --small-icons : 19px;
+  --medium-icons : 24px;
+  --large-icons : 55px;
+
+  /* Backgroung Color */
+  --black: #000000;
+  --black-O50 : #000000ae;  /*Mostly for dropdown backgrounds*/
+}
+
+/* ----------------------------------------------------- Variable Ends ----------------------------------------------------- */
+
+/* ----------------------------------------------------- */
+.rootbody {
+  line-height: 1;
+  font-family: "Delius", serif;
+  position: relative;
+  /* background: url("/assets/horse_land.png"); */
+  /* background:url("/assets/Landscape_land.png"); */
+  /* background: url(/assets/City_land.jpg); */
+  /* background: url(/assets/Night_Land.jpg); */
+  background: url(/assets/Volcano_Land.jpg);
+  /* background: url(/assets/Warrior_Land.jpg); */
+  /* background: url(/assets/Flowers\ Landscape.png); */
+  /* background: url(/assets/Tree_night_land.jpg); */
+  background-repeat: no-repeat;
+  /* filter: blur(4px); */
+  background-position: center;
+  background-size: 100% 100%;
+  height: 100vh;
+  overflow: hidden;
+  color: #ffffff;
+  /* transition: 100s; */
+}
+
+.maindashboard {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  overflow: hidden;
+  height: 100vh;
+}
+
+
+/* TOP AREA CODE STARTS here */
+.toparea {
+  display: flex;
+  font-size: var(--small-font);
+  color: var(--white);
+  justify-content: space-between;
+  padding: 17px 20px 0px 20px;
+  position: relative;
+}
+
+.toparea img {
+  color: #ffffff;
+  width: var(--medium-icons);
+  height: var(--medium-icons);
+  margin-bottom: 5px;
+}
+
+.top_left_area , .top_right_area {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+
+.link,
+.focus,
+.calender,
+.weather,
+.settings,
+.todolist,
+.focus_podometer {
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Links Code stats here */
+
+#link_img{
+  width: var(--small-icons);
+  height: var(--small-icons);
+}
+
+.linkDropDown_left,
+.linkDropDown_right {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 10px;
+  background-color: var(--black-O50);
+  padding: 21px;
+  position: absolute;
+  margin-top: 10px;
+  left: 0;
+  border-radius: 15px;
+  width: 12rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* height: 100%; */
+}
+
+
+.linkDropDown_top_content_right {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.linkDropDown_top_content_right img,
+.linkDropDown_bottom img,
+.linkDropDown_right_top img {
+  width: var(--very-small-icons);
+  height: var(--very-small-icons);
+  margin: 0;
+}
+
+.linkDropDown_bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.linkDropDown_bottom p {
+  font-size: var(--small-font);
+  color: var(--white);
+  text-align: left;
+  display: block;
+}
+
+.linkDropDown_bottom_item {
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.linkDropDown_bottom_item_left {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  text-decoration: none;
+  color: var(--white);
+  width: 100%;
+  padding: 8px 0px;
+}
+
+.linkDropDown_right_top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.linksform {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.linklabel {
+  display: block;
+  text-align: left;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: var( --small-font);
+}
+
+.linksSubmit {
+  box-shadow: none;
+  border: none;
+  margin-top: 20px;
+  border-radius: 15px;
+  padding: 5px;
+  background-color: #475664;
+  color: #ffffff;
+  font-size: var( --small-font);
+}
+
+.linkInput {
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+  border-bottom: 1px solid #ffffff;
+  color: var(--white);
+}
+
+.linkInput:focus-visible {
+  outline: none;
+  box-shadow: none;
+  border: none;
+  border-bottom: 2px solid var(--white);
+}
+
+/* Links Code ends here */
+
+
+/* Focus Code stats here */
+
+#focus_img {
+  transform: scaleX(-1); /*to make image rotate*/
+  width: var(--small-icons);
+  height: var(--small-icons);
+}
+
+.focus_podometer {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: var(--medium-font);
+  font-weight: 600;
+  position: absolute;
+  left: 50%;
+  /* top: 50%; */
+  transform: translateX(-50%);
+}
+
+.focus_podometer img {
+  width: var(--medium-icons);
+  height: var(--medium-icons);
+  margin: 0;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.focus_podometer img:hover {
+  background-color: #adadad75;
+}
+
+/* Focus Code ends here */
+
+
+/* Calender Code Starts here */
+
+.calender img {
+  width: var(--medium-icons);
+  height: var(--medium-icons);
+  margin: 0;
+}
+
+
+.calenderDropDown {
+  position: absolute;
+  background-color: var(--black-O50);
+  padding: 15px;
+  flex-direction: column;
+  margin-top: 10px;
+  border-radius: 15px;
+  right: 0;
+}
+
+.calenderDropDown_top {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.calenderDropDown_top img {
+  width: var(--small-icons);
+  height: var(--small-icons);
+  margin: 0;
+}
+
+.calenderDropDown_center {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 5px;
+  padding: 5px;
+}
+
+.calenderDropDown_bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 5px;
+  padding: 5px;
+}
+
+.calenderDropDown_bottom div {
+  padding: 5px;
+  border-radius: 2px;
+}
+
+.calenderDropDown_bottom div:hover {
+  background-color: #475664;
+}
+
+.fade {
+  color: #555;
+}
+
+.today {
+  color: red;
+}
+
+/* Calender Code ends here */
+
+
+/* Weather Code Starts here */
+
+.weather_top {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 5px;
+}
+
+.weather_top p {
+  font-size: var(--medium-font);
+}
+
+
+.weather_dropdown {
+  position: absolute;
+  right: 0;
+  background-color: var(--black-O50);
+  padding: 21px;
+  margin-top: 10px;
+  border-radius: 15px;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+}
+
+.weather_dropdown_top {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.weather_dropdown_top_left {
+  text-align: left;
+}
+
+.weather_dropdown_top_left_cityname {
+  font-size: var(--medium-font);
+  text-align: left;
+}
+
+
+.weather_dropdown_top_left_status {
+  margin-top: 5px;
+  font-size: var(--small-font);
+}
+
+#weather_dropdown_icon {
+  width: var(--small-icons);
+  height: var(--small-icons);
+  margin: 0;
+  cursor: pointer;
+}
+
+#weather_dropdown_icon:hover {
+  width: var(--medium-icons);
+  height: var(--medium-icons);
+}
+
+#weather_dropdown_top_right_input {
+  position: relative;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  border-bottom: 1px solid #888;
+  color: var(--white);
+  cursor: pointer;
+  padding-bottom: 7px;
+  font-size: 15px;
+}
+
+#weather_search_suggestions {
+  color: #888;
+  flex: 1;
+  text-align: left;
+}
+
+#weather_search_suggestions li {
+  cursor: pointer;
+  margin-top: 3px;
+  padding: 8px 5px;
+  display: block;
+}
+
+#weather_search_suggestions li:hover {
+  background-color: #7978783b;
+}
+
+#weather_dropdown_top_right_input::placeholder {
+  font-size: 15px;
+}
+
+#weather_dropdown_top_right_input:autofill {
+  background: transparent;
+}
+
+#weather_dropdown_top_right_input:hover {
+  border-bottom: 2px solid #888;
+}
+
+#weather_dropdown_top_right_input:hover::placeholder {
+  font-weight: 600;
+}
+
+.weather_dropdown_bottom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  border-bottom: 2px solid #2f2f2e;
+  padding-bottom: 10px;
+  align-items: center;
+  width: 21rem;
+}
+
+.weather_dropdown_bottom_left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.weather_dropdown_bottom_left_img img {
+  margin: 0;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+}
+
+.weather_dropdown_bottom_left p {
+  font-size: var(--extra-large-font);
+}
+
+.weather_dropdown_bottom_right p {
+  text-align: left;
+  font-size: var(--small-font);
+  margin-bottom: 3px;
+}
+
+/* Weather Code Ends here */
+
+
+/* CENTER AREA START FROM here */
+
+.centerarea {
+  margin: 0px auto;
+}
+
+.clock_display_content {
+  display: flex;
+  justify-content: center;
+  font-size: 125px;
+  color: var(--white);
+  font-weight: 600;
+}
+
+.AMPM {
+  font-size: 20px;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  margin: auto 0px 10px 5px;
+}
+
+.greeting {
+  font-size: 33px;
+  color: var(--white);
+}
+
+/* Greating Code Area */
+
+#greeting_para_input{
+  background-color: transparent;
+  border: none;
+  color: var(--white);
+  border-bottom: 2px solid #2c2d2d;
+}
+
+#greeting_para_input::placeholder{
+  font-size: 17px;
+  color: var(--white);
+  font-family: "Delius", serif;
+}
+
+#greeting_para_input:focus-visible{
+  border: none;
+}
+
+/* Greating Code Area */
+
+
+
+/* Podometer Code Area */
+
+.pomodometer_content {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.pomodometer_content_top {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.podometer_top_Btn {
+  background-color: transparent;
+  padding: 15px;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: var(--medium-font);
+  font-weight: 600;
+  z-index: 50;
+}
+
+.podometer_focus_active {
+  background-color: #ffffff55;
+}
+
+.podometer_top_Btn:hover {
+  background-color: #ffffff55;
+}
+
+.pomodometer_content_timer_clock {
+  font-size: 80px;
+  font-weight: 600;
+  color: var(--white);
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+}
+
+.podometer_pause_btn {
+  background-color: transparent;
+  border: none;
+  padding: 5px;
+  border-radius: 10px;
+  z-index: 50;
+}
+
+.podometer_pause_btn img {
+  width: var(--large-icons);
+  height: var(--large-icons);
+}
+
+.podometer_pause_btn:hover {
+  background-color: #ffffff55;
+}
+
+.pomodometer_progress_bar {
+  position: absolute;
+  z-index: 0;
+}
+
+/* ----------------------------------------------------- - - - - - */
+.pomodometer_progress_bar_circle {
+  transform: rotate(-90deg); /* Rotate from the top */
+}
+
+.pomodometer_progress_bar_circle_bg {
+  fill: none;
+  stroke: #e0e0e02f; /* Background color of the progress bar */
+  /* filter: blur(1); */
+  stroke-width: 2;
+}
+
+.pomodometer_progress_bar_circle_light {
+  fill: none;
+  stroke: #0000003f; /* Color of the progress bar */
+  stroke-width: 2;
+  stroke-dasharray: 282.6; /* Circumference of the circle (2 * π * r) */
+  stroke-dashoffset: 282.6; /* Initially hide the progress  Issi ko kmm krte hei change dekhne kei leye*/
+  transition: all 2s ease; /* Smooth transition for the progress */
+  cursor: none;
+}
+/* ----------------------------------------------------- - - - - - */
+
+/* Bottom Area Starts from here */
+
+.bottomarea {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 20px 17px 20px;
+}
+
+.bottomarea img {
+  width: var(--small-icons);
+  height: var(--small-icons);
+}
+
+.quotes {
+  color: var(--white);
+  font-size: var(--small-font);
+  text-align: center;
+  width: 80%;
+}
+
+.settings,
+.todolist {
+  position: relative;
+  z-index: 10;
+}
+
+.settings_dropup {
+  position: absolute;
+  bottom: 0;
+  background-color: var(--black-O50);
+  margin-bottom: 15px;
+  bottom: 100%;
+  height: 60vh;
+  width: 25rem;
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.settings_dropup_left {
+  padding: 20px;
+  border-right: 2px solid #2c2d2d;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  font-size: var(--small-font);
+}
+
+.settings_dropup_left_tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.settings_dropup_left_profile {
+  align-items: center;
+  font-size: var(--small-font);
+  text-align: end;
+  gap: 6px;
+  position: relative;
+}
+
+.settings_dropup_right {
+  padding: 20px;
+  overflow-y: scroll;
+}
+
+.settings_dropup_right::-webkit-scrollbar {
+  width: 6px;
+  margin-right: 10px;
+}
+.settings_dropup_right::-webkit-scrollbar-button {
+  /* background: #f1f1f1; */
+  display: none;
+}
+
+.settings_dropup_right::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 100px;
+}
+/* .settings_dropup_right::-webkit-scrollbar-thumb:hover{
+    background: #555;
+} */
+
+.settings_dropup_right {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.settings_dropup_right_show_links {
+  margin-top: 5px;
+}
+
+.settings_dropup_right_show_links li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.settings_dropup_right_show_links label {
+  width: 40px;
+  height: 21px;
+  position: relative;
+  display: block;
+  background: #5d5c5c;
+  border-radius: 200px;
+  box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4),
+    inset 0px -5px 15px rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.settings_dropup_right_show_links label::after {
+  content: "";
+  width: 15px;
+  height: 17px;
+  position: absolute;
+  top: 2px;
+  left: 3px;
+  /* background: linear-gradient(180deg , #ffcc89 , #d8860b); */
+  background-color: #cfcfcf;
+  border-radius: 200px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.settings_dropup_right_show_links input {
+  width: 0px;
+  height: 0px;
+  visibility: hidden;
+}
+
+.settings_dropup_right_show_links input:checked + label {
+  background: #4dbf40;
+}
+
+.settings_dropup_right_show_links input:checked + label::after {
+  left: 37px;
+  transform: translate(-100%);
+}
+
+.settings_dropup_right_show_links label:active:after {
+  width: 30%;
+}
+
+.settings_dropup_left_profile_dropup{
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  display: none;
+}
+
+#ownerInputName{
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #475664;
+  width: 100%;
+  color: var(--white);
+}
+
+#ownerInputName:focus-visible{
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #475664;
+}
+
+#addOwnerNameBtn{
+  background-color: #ffffff69;
+  border: none;
+  display: inline;
+  text-align: center;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+#addOwnerNameBtn:hover{
+  background-color: #ffffffb9;
+}
+
+/* Todolist code Starts here */
+
+.todolist_dropup {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  background-color: var(--black-O50);
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.todolist_dropup_top,
+.todolist_dropup_bottom {
+  padding: 10px;
+}
+
+.todolist_dropup_top ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.todolist_dropup_top ul li img {
+  width: var(--very-small-icons);
+  height: var(--very-small-icons);
+}
+
+.todolist_dropup_bottom {
+  position: relative;
+  display: flex;
+  gap: 10px;
+}
+
+#todolist_input_text {
+  border: none;
+  color: var(--white);
+  border-radius: 2px;
+  background-color: #2f2f2e85;
+}
+
+#todolist_input_text:hover {
+  background-color: #2f2f2e;
+}
+
+#todolist_input_text:focus-visible {
+  background-color: transparent;
+  outline: none;
+}
+
+#todolist_input_text::placeholder {
+  font-size: var(--small-font);
+  align-items: center;
+  text-align: center;
+  color: #cfcfcf;
+}
+
+#todolist_add_Button {
+  border-radius: 0px;
+  border: 0;
+  font-size: var(--small-font);
+  padding: 5px;
+  font-weight: 500;
+  color: var(--white);
+  background-color: #2f2f2e85;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.todo_completed p {
+  text-decoration: line-through;
+}
+
+.todolist_dropup_top_ul{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 5px;
+  color: var(--white);
+  font-size: var(--small-font);
+}

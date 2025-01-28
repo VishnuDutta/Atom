@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="This website is meant for Productivity" />
+    <meta
+      name="keywords"
+      content="dashboard , productivity , links , calender , weather , todolist , podometer , study"
+    />
+    <meta name="author" content="Vishnu Dutta" />
+    <!-- adding Custom Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Delius&display=swap"
+      rel="stylesheet"
+    />
+    <!-- End Custom Font -->
+    <title>ATOM</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="rootbody">
+      <div class="container">
+        <div class="maindashboard">
+          <header class="toparea">
+            <div class="top_left_area">
+              <div class="link">
+                <img src="/assets/link_img.svg" alt="" id="link_img" />
+                <p>Links</p>
+                <div class="linkDropDown hidden" id="linkDropDown">
+                  <div class="linkDropDown_left">
+                    <div class="linkDropDown_top">
+                      <div class="linkDropDown_top_content_right">
+                        <img
+                          src="/assets/plus_sign_png.png"
+                          alt="Plus"
+                          id="linkDropDown_plus_img"
+                        />
+                        <!-- <img src="/assets/dor_ellipsis.png" alt="" /> -->
+                      </div>
+                    </div>
+                    <div class="linkDropDown_bottom"></div>
+                  </div>
+                  <div class="linkDropDown_right" style="display: none">
+                    <div class="linkDropDown_right_top">
+                      <img
+                        src="/assets/back_sign.png"
+                        alt="Back"
+                        id="linkDropDown_back_img"
+                      />
+                      <p>Bookmark Links</p>
+                      <img
+                        src="/assets/cross_sign.png"
+                        alt="Cross"
+                        id="linkDropDown_cross_img"
+                      />
+                    </div>
+                    <div class="linkDropDown_right_bottom">
+                      <form action="#" class="linksform">
+                        <label for="linkTitle" class="linklabel">Title</label
+                        ><input type="text" id="linkTitle" class="linkInput" />
+                        <label for="linkLinks" class="linklabel">Links</label
+                        ><input type="text" id="linkLinks" class="linkInput" />
+                        <button type="submit" class="linksSubmit">Add</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="focus">
+                <img src="/assets/focus_img.png" alt="" id="focus_img" />
+                <p>Focus</p>
+              </div>
+            </div>
+            <div class="focus_podometer" style="display: none">
+              <audio src="/assets/pomo-start.mp3" id="pomo-start"></audio>
+              <audio src="/assets/pomo-stop.mp3" id="pomo-stop"></audio>
+              <audio src="/assets/silence.mp3" id="pomo-silence"></audio>
+              <img src="/assets/focus_img.png" alt="" />
+              <p>Focusing</p>
+              <img src="/assets/pause_btn.png" alt="" id="pause_podometer" />
+            </div>
+            <div class="top_right_area">
+              <div class="calender" id="calender">
+                <img
+                  src="/assets/Calender.png"
+                  alt="Calender"
+                  id="calenderImg"
+                />
+                <p>Calender</p>
+                <div class="hidden calenderDropDown" id="calenderDropDown">
+                  <div class="calenderDropDown_top">
+                    <div
+                      class="calenderDropDown_btn"
+                      id="calenderDropDown_top_btn_prev"
+                    >
+                      <img src="/assets/left_arrow.png" alt="" />
+                    </div>
+                    <div id="calenderDropDown_month_year"></div>
+                    <div
+                      class="calenderDropDown_btn"
+                      id="calenderDropDown_top_btn_next"
+                    >
+                      <img src="/assets/right_arrow.png" alt="" />
+                    </div>
+                  </div>
+                  <div class="calenderDropDown_center">
+                    <div>Sun</div>
+                    <div>Mon</div>
+                    <div>Tue</div>
+                    <div>Wed</div>
+                    <div>Thr</div>
+                    <div>Fri</div>
+                    <div>Sat</div>
+                  </div>
+                  <div class="calenderDropDown_bottom" id="calenderDays"></div>
+                </div>
+              </div>
+              <div class="weather" id="weather">
+                <div class="weather_top">
+                  <div class="weather_img_dashboard">
+                    <img
+                      src="/assets/cloudy_img_png.png"
+                      alt="Cloudy"
+                      id="weather_img_dash"
+                      class="weather_img"
+                    />
+                  </div>
+                  <p id="weather_top_temp_dash"><span>&degC</span></p>
+                </div>
+                <p class="wheather_city">City Name</p>
+                <div class="weather_dropdown hidden" id="weather_dropdown">
+                  <div class="weather_dropdown_top">
+                    <div class="weather_dropdown_top_left">
+                      <span class="display_flex" style="gap: 10px">
+                        <p class="weather_dropdown_top_left_cityname">
+                          CityName
+                        </p>
+                      </span>
+                      <p class="weather_dropdown_top_left_status">Clear</p>
+                    </div>
+                    <div
+                      class="hidden"
+                      id="weather_dropdown_top_right_input_div"
+                    >
+                      <input
+                        type="text"
+                        id="weather_dropdown_top_right_input"
+                        placeholder="Enter your City"
+                        autocomplete="off"
+                      />
+                      <ul id="weather_search_suggestions"></ul>
+                    </div>
+                    <div class="weather_dropdown_top_right">
+                      <img
+                        src="/assets/Search_bar.png"
+                        alt="Search"
+                        id="weather_dropdown_icon"
+                      />
+                    </div>
+                  </div>
+                  <div class="weather_dropdown_bottom">
+                    <div class="weather_dropdown_bottom_left">
+                      <div class="weather_dropdown_bottom_left_img">
+                        <img
+                          src="/assets/cloudy_img_png.png"
+                          alt="Cloudy"
+                          id="weather_img_drop"
+                          class="weather_dropdown_bottom_img"
+                        />
+                      </div>
+                      <p id="weather_dropdown_temp">&deg</p>
+                    </div>
+                    <div class="weather_dropdown_bottom_right">
+                      <div class="weather_dropdown_bottom_right_summary">
+                        <p>
+                          Feels Like <span id="weather_feels_like"></span>&deg
+                        </p>
+                      </div>
+                      <div class="weather_dropdown_bottom_right_currentstate">
+                        <p>Humidity <span id="humidity">0mm</span></p>
+                      </div>
+                      <div class="weather_dropdown_bottom_right_winddetails">
+                        <p>Windy <span id="windy"></span>Km/h</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </header>
+          <main class="centerarea">
+            <div class="clock">
+              <div class="clock_display_content">
+                <div class="hours">00</div>
+                <span>:</span>
+                <div class="Minutes">00</div>
+                <div class="AMPM"></div>
+              </div>
+            </div>
+            <div class="podometer" style="display: none">
+              <div class="pomodometer_content">
+                <div class="pomodometer_content_top">
+                  <button
+                    class="podometer_top_Btn podometer_focus_active"
+                    id="podometer_focus_Btn"
+                  >
+                    FOCUS
+                  </button>
+                  <button
+                    class="podometer_break podometer_top_Btn"
+                    id="podometer_break_Btn"
+                  >
+                    BREAK
+                  </button>
+                </div>
+                <div class="pomodometer_content_timer">
+                  <div class="pomodometer_content_timer_clock">
+                    <div class="pomodometer_content_timer_hours">HH</div>
+                    <span>:</span>
+                    <div class="pomodometer_content_timer_minutes">MM</div>
+                    <span>:</span>
+                    <div class="pomodometer_content_timer_seconds">SS</div>
+                  </div>
+                  <!-- <div class="pomodometer_content_timer_inputdata"></div> Comming Soon -->
+                </div>
+                <button class="podometer_pause_btn">
+                  <img src="/assets/pause_btn.png" alt="" />
+                </button>
+                <div class="pomodometer_progress_bar">
+                  <svg
+                    height="500"
+                    viewBox="0 0 100 100"
+                    class="pomodometer_progress_bar_circle"
+                  >
+                    <circle
+                      cx="50"
+                      cy="50"
+                      r="45"
+                      class="pomodometer_progress_bar_circle_bg"
+                    />
+                    <circle
+                      cx="50"
+                      cy="50"
+                      r="45"
+                      class="pomodometer_progress_bar_circle_light"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="greeting">
+              <p class="greeting_para">
+                GoodAfter noon <span id="ownerNameDashboard"></span>
+              </p>
+            </div>
+          </main>
+          <footer class="bottomarea">
+            <div class="settings" id="settings">
+              <div id="settings_toggle" class="hidden">
+                <div class="settings_dropup" id="settings_dropup">
+                  <div class="settings_dropup_left">
+                    <ul class="settings_dropup_left_tabs">
+                      <li id="setting_general" class="setting_general focus">
+                        General
+                      </li>
+                      <li>Focus Mode</li>
+                      <li>Tasks</li>
+                    </ul>
+                    <ul class="settings_dropup_left_profile display_flex">
+                      <img src="/assets/Profile_photo.png" id="profile_toogle" alt=""/>
+                      <p id="ownerNameInjectionSettings">Click on Profile</p>
+                      <div class="settings_dropup_left_profile_dropup">
+                        <input type="text" placeholder="Enter your name" id="ownerInputName">
+                        <button id="addOwnerNameBtn">Add</button>
+                      </div>
+                    </ul>
+                  </div>
+                  <div class="settings_dropup_right">
+                    <p>General</p>
+                    <p>Customize your Dashboard</p>
+                    <div class="settings_dropup_right_show_links">
+                      <ul>
+                        <li>
+                          <p>Links</p>
+                          <input
+                            type="checkbox"
+                            name="linksshow"
+                            id="linksshow"
+                            checked
+                          />
+                          <label for="linksshow" id="linksshowlabel"></label>
+                        </li>
+                        <li>
+                          <p>Focus</p>
+                          <input
+                            type="checkbox"
+                            name="focusshow"
+                            id="focusshow"
+                            checked
+                          />
+                          <label for="focusshow" id="focusshowlabel"></label>
+                        </li>
+                        <li>
+                          <p>Calender</p>
+                          <input
+                            type="checkbox"
+                            name="Calender"
+                            id="Calendershow"
+                            checked
+                          />
+                          <label
+                            for="Calendershow"
+                            id="Calendershowlabel"
+                          ></label>
+                        </li>
+                        <li>
+                          <p>Weather</p>
+                          <input
+                            type="checkbox"
+                            name="weathershow"
+                            id="weathershow"
+                            checked
+                          />
+                          <label
+                            for="weathershow"
+                            id="weathershowlabel"
+                          ></label>
+                        </li>
+                        <li>
+                          <p>Greeting</p>
+                          <input
+                            type="checkbox"
+                            name="greetingshow"
+                            id="greetingshow"
+                            checked
+                          />
+                          <label
+                            for="greetingshow"
+                            id="greetingshowlabel"
+                          ></label>
+                        </li>
+                        <li>
+                          <p>Quote</p>
+                          <input
+                            type="checkbox"
+                            name="quoteshow"
+                            id="quoteshow"
+                            checked
+                          />
+                          <label for="quoteshow" id="quoteshowlabel"></label>
+                        </li>
+                        <li>
+                          <p>Tasks</p>
+                          <input
+                            type="checkbox"
+                            name="tasksshow"
+                            id="tasksshow"
+                            checked
+                          />
+                          <label for="tasksshow" id="tasksshowlabel"></label>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <img src="/assets/settings.png" alt="Settings" id="settingsImg" />
+            </div>
+            <div class="quotes">
+              <p id="quotes">
+                There are two ways of spreading light.. to be the candle or the
+                mirror that reflects it.There are two ways of spreading light..
+                to be the candle or the mirror that reflects it.There are two
+                ways of spreading light.. to be the candle or the mirror that
+                reflects it.
+              </p>
+            </div>
+            <div class="todolist" id="todolist">
+              <div class="todolist_dropup hidden" id="todolist_dropup">
+                <div class="todolist_dropup_top">
+                  <ul class="todolist_dropup_top_ul"></ul>
+                </div>
+                <div class="todolist_dropup_bottom">
+                  <input
+                    type="text"
+                    id="todolist_input_text"
+                    placeholder="Add Task"
+                  />
+                  <button type="submit" id="todolist_add_Button">Add</button>
+                </div>
+              </div>
+              <img src="/assets/todo-list.png" alt="todo-list" />
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
