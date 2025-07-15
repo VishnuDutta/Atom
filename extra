@@ -1,0 +1,33 @@
+
+:root {
+  /* Font Variables */
+
+  --very-small-font: 10px;
+  --small-font: 13px;
+  --medium-font: 20px;
+  --large-font: 30px;
+  --extra-large-font: 40px;
+
+  /* Color Variables */
+
+  --white: #ffffff;
+  /* --red: ;
+  --blue: #1e90ff; */
+
+  /* Spacing Varibales */
+
+  --spacing-small: 8px;
+  --spacing-medium: 16px;
+  --spacing-large: 32px;
+
+  /* Icons Variables  Images  */
+
+  --very-small-icons : 13px;
+  --small-icons : 19px;
+  --medium-icons : 24px;
+  --large-icons : 55px;
+
+  /* Backgroung Color */
+  --black: #000000;
+  --black-O50 : #000000ae;  mosty for dropdown backgrounds
+}
